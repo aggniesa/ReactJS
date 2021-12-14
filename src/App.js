@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './app.scss';
+
 
 //Componentes
 import Navbar from "./Componentes/navbar/Navbar";
@@ -14,12 +14,16 @@ function App () {
     {href:"#", name:"Carrito"},
 
   ]
+  const foo = () => {
+    console.log("Foo");
+  }
 
   return (
     <>
-      <Navbar nombre="Ines" edad={29} links={links}/>
+      <Navbar nombre={"E-Commerce"} links={links} foo={foo}/>
+      <ItemListContainer nombreUsuario={"Inés"} apellido={"Mena"}/>
       <main>Main</main>
-      <ItemListContainer saludo=""/>
+      
     </>
   );
 }
