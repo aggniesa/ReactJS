@@ -1,17 +1,19 @@
 import React from 'react';
-import ItemCount from "./ItemCount.js"
+import ItemCount from "./ItemCount";
 
-const ItemListContainer = (props) => {
-    const {nombreUsuario, apellido} = props;
+const ItemListContainer = ({greeting, nombreUsuario, apellido}) => {
+
+    let onAdd = (contador) => {
+        console.log("Agregaste " + contador + "productos");
+    }
+    //const {greeting, nombreUsuario, apellido} = props;
     return (
-        <>
+     
         <div>
-            {
-                <h1 className="greeting">¡Bienvenidx, {nombreUsuario} {apellido}!</h1>
-            } 
+            <p>¡{greeting}, {nombreUsuario} {apellido}!</p>
+            <ItemCount stock={7} initial={1} onAdd={onAdd}/>
         </div>
-        <ItemCount stock={15} initial={0}/>
-        </>
+        
     )
 }
 

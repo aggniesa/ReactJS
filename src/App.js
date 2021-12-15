@@ -1,6 +1,5 @@
 import './app.scss';
 
-
 //Componentes
 import Navbar from "./Componentes/navbar/Navbar";
 import ItemListContainer from "./Componentes/ItemListContainer";
@@ -14,14 +13,11 @@ function App () {
     {href:"#", name:"Carrito"},
 
   ]
-  const foo = () => {
-    console.log("Foo");
-  }
 
   return (
     <>
-      <Navbar nombre={"E-Commerce"} links={links} foo={foo}/>
-      <ItemListContainer nombreUsuario={"Inés"} apellido={"Mena"}/>
+      <Navbar nombre={"E-Commerce"} links={links}/>
+      <ItemListContainer greeting={"Bienvenidx"} nombreUsuario={"Inés"} apellido={"Mena"}/>
       <main>Main</main>
       
     </>

@@ -1,7 +1,8 @@
 import React from "react";
 import "./navbar.scss";
+import CartWidget from "../CartWidget.js"
 
-const Navbar = ({nombre, links, foo}) => {
+function Navbar ({nombre, links}) {
 
     return (
         <header id="main-header" className="header">
@@ -11,8 +12,9 @@ const Navbar = ({nombre, links, foo}) => {
             <nav>
                 {links.map((elemento,indice)=>{
                     return <a key={elemento.name} href={elemento.href}>{elemento.name}</a>
-                })} 
-                <span onClick={foo} className="material-icons">
+                })}
+                <CartWidget /> 
+                <span className="material-icons">
                     shopping_cart
                 </span>
             </nav>
