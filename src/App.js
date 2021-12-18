@@ -1,11 +1,15 @@
+import React from 'react';
 import './app.scss';
 
+
 //Componentes
-import Navbar from "./Componentes/navbar/Navbar";
-import ItemListContainer from "./Componentes/ItemListContainer";
+import Navbar from './Componentes/navbar/Navbar';
+import ItemListContainer from './Componentes/ItemListContainer';
 
 
 function App () {
+
+  //let [estado, setEstado] = useState(false);
 
   const links= [
     {href:"#", name:"Inicio"},
