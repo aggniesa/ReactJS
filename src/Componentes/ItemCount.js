@@ -21,9 +21,9 @@ function ItemCount ({stock, initial, onAdd}) {
         <div className="contador">
           
           <p> Productos: {contador}</p>
-          <button onClick={sumar}>+</button>
-          <button onClick={() => onAdd(contador)}>Agregar</button>
           <button onClick={restar}>-</button>
+          <button onClick={() => onAdd(contador)}>Agregar</button>
+          <button onClick={sumar}>+</button>
           
         </div>
         
