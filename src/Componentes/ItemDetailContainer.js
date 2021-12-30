@@ -26,7 +26,7 @@ function ItemDetailContainer({}) {
         const promesa = new Promise ((res,rej) => {
             setTimeout(() => {
                 res(initialProduct)
-            }, 2000);    
+            }, 4000);    
         })
         return promesa;
     };
