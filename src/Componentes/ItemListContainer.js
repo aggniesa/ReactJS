@@ -38,10 +38,10 @@ function ItemListContainer ({greeting, nombreUsuario, apellido}) {
             <p>¡{greeting}, {nombreUsuario} {apellido}!</p>
             {
                 loading ? 
-                <ClipLoader color={"#2BEFC6"} loading={loading} size={150} />
+                <ClipLoader color={"#2BEFC6"} loading={loading} size={75} />
                 :
                 <ItemList lista={products}/>
-            };
+            }
             
 
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./navbar.scss";
-import CartWidget from "../CartWidget.js"
+import CartWidget from "./CartWidget.js"
 
 function Navbar ({nombre, links}) {
 
