@@ -1,22 +1,28 @@
 import React from "react";
 import "./navbar.scss";
-import CartWidget from "./CartWidget.js"
+import { Link, NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget.js";
 
 function Navbar ({nombre, links}) {
 
     return (
         <header id="main-header" className="header">
-        
-                <img src="../logo192.png" alt="logo"/>
+            <NavLink to="/">
+                <div className="brand">
+                <img src="../logo-2.jpg" alt="logo"/>
                 <h1>{nombre}</h1>
+                </div>
+            </NavLink>
             <nav>
                 {links.map((elemento,indice)=>{
-                    return <a key={elemento.name} href={elemento.href}>{elemento.name}</a>
+                    return <Link key={elemento.name} to={elemento.href}>{elemento.name}</Link>
                 })}
-                <CartWidget /> 
-                <span className="material-icons">
-                    shopping_cart
-                </span>
+                <NavLink to="/cart">
+                    <CartWidget /> 
+                    <span className="material-icons">
+                        shopping_cart
+                    </span>
+                </NavLink>
             </nav>
         
         </header>

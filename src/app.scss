@@ -10,31 +10,19 @@ $colorLetters: rgba(245, 245, 245, 0.959);
 html , body , #root {
     height: 100vh;
 }
-
-#main-header {
-    display: flex;
-    align-items: center;
-   justify-content: space-between;
-   background-color: rgb(0, 0, 0);
-    color: $colorLetters;
-    padding: 20px;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
-    img {
-        height: 50px;
-    }
-    .greeting {
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    nav {
-        a{
-            color: $colorLetters;
-            text-decoration: none;
-            margin-left: 16px;
-        }
-    }
-    
-    
+main {
+    height: 100vh;
 }
 
+footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(0, 0, 0);
+        color: $colorLetters;
+        padding: 0.5rem;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+        text-align: center;
+        margin-bottom: 0.5rem;
 
-
+};
