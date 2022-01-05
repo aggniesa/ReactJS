@@ -16,9 +16,12 @@ function ItemListContainer ({greeting, nombreUsuario, apellido}) {
     useEffect(() => {
         console.log(id);
         /*
+        const filteredData = data.filter ((products) => data.category);
         if (id) {
+            res (products.filter(data => data.category == id));
 
         } else {
+            res (products);
 
         };
         */
@@ -29,6 +32,7 @@ function ItemListContainer ({greeting, nombreUsuario, apellido}) {
             console.log (result);
 
             // if(id){
+                
 
             //} else {
             
@@ -41,6 +45,7 @@ function ItemListContainer ({greeting, nombreUsuario, apellido}) {
         
         const promesa = new Promise ((res,rej) => {
             setTimeout(() => {
+                
                 setLoading (false);
                 res(productos)
             }, 2000);    
