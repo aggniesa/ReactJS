@@ -10,7 +10,6 @@ function ItemListContainer ({greeting, nombreUsuario, apellido}) {
     
    const [products, setProducts] = useState ([]);
    const {id} = useParams ();
-    
    const [loading, setLoading] = useState (false);
 
     useEffect(() => {
@@ -49,6 +48,8 @@ function ItemListContainer ({greeting, nombreUsuario, apellido}) {
                 setLoading (false);
                 res(productos)
             }, 2000);    
+
+            
         })
         return promesa;
     }

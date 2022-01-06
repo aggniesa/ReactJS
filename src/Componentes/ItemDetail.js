@@ -1,5 +1,7 @@
 import ItemCount from "./ItemCount";
 import Item from './Item';
+import { useParams } from 'react-router-dom';
+import data from './data/data';
 
 
 const ItemDetail = ({item}) => {
@@ -7,6 +9,9 @@ const ItemDetail = ({item}) => {
     function onAdd(contador) {
         console.log("Agregaste " + contador + "productos");
    }
+
+   // const {id} = useParams ();
+   // console.log (id)
     return (
         <div>
             <h1>Detalle de producto</h1>
