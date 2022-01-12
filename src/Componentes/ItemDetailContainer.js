@@ -11,15 +11,11 @@ function ItemDetailContainer({}) {
     const [item, setItem] = useState ({});
     const [loading, setLoading] = useState (false);
     const {id} = useParams();
-    
+    let foundProduct = productos.filter(item => item.id == id)
     useEffect(() => {
         setLoading (true);
-        const promesa = getItems();
-        promesa
-        .then(result => {
-            console.log (result);
-            setItem (result);
-        })
+        getItems();
+        
     }, [])
 
     const getItems = () => {
@@ -27,16 +23,15 @@ function ItemDetailContainer({}) {
         const promesa = new Promise ((res,rej) => {
             setTimeout(() => {
                 setLoading (false);
-                let idProd = productos.filter((productos) => productos.id === id)
-        
-            setItem(idProd)
+                let idProd = productos.filter((item) => item.id == id)
+                console.log(idProd)
+                res (idProd[0])
             }, 4000);    
         })
+        promesa.then((producto) => setItem(producto) )
 
         return promesa;
     };
-
-
 
     return (
         <div>

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 
 
-const Item = ({item}) => {
-
+export function Item ( {item} ) {
     return (
         <div className="card">
             <img src=" " alt=" "></img>
@@ -12,7 +11,7 @@ const Item = ({item}) => {
                 <Link to={`/item/${item.id}`}><button>Ver detalle</button></Link>
             </div>
         </div>
-    )
+    );
 }
 
 export default Item

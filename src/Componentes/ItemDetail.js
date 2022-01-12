@@ -10,8 +10,8 @@ const ItemDetail = ({item}) => {
         console.log("Agregaste " + contador + "productos");
    }
 
-   // const {id} = useParams ();
-   // console.log (id)
+    const {id} = useParams ();
+    console.log (id)
     return (
         <div>
             <h1>Detalle de producto</h1>

@@ -15,8 +15,8 @@ function App () {
 
   const links= [
     {href:"/products", name:"Products"},
-    {href:"/category/la_Roche", name:"La Roche Posay", id:"La Roche Posay"},
-    {href:"/category/the_Ordinary", name:"The Ordinary", id:"The Ordinary"},
+    {href:"/category/1", name:"La Roche Posay", id:"La Roche Posay"},
+    {href:"/category/2", name:"The Ordinary", id:"The Ordinary"},
 
   ]
 

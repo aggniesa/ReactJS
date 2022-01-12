@@ -6,39 +6,29 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 const productos = data;
 
-function ItemListContainer ({greeting, nombreUsuario, apellido}) {
+function ItemListContainer ({greeting, nombreUsuario, apellido, item}) {
     
    const [products, setProducts] = useState ([]);
    const {id} = useParams ();
    const [loading, setLoading] = useState (false);
 
     useEffect(() => {
-        console.log(id);
-        /*
-        const filteredData = data.filter ((products) => data.category);
-        if (id) {
-            res (products.filter(data => data.category == id));
 
-        } else {
-            res (products);
-
-        };
-        */
         setLoading (true);
         const promesa = getItems();
         promesa
-        .then(result => {
-            console.log (result);
-
-            // if(id){
-                
-
-            //} else {
+        .then((data) => {
+           
+            if(id) {
+                let filteredProducts = data.filter(item => item.category == id)
+                setProducts (filteredProducts)
+            } else {
+                setProducts (data);
+            }
             
-            setProducts (result);
-            //}
         })
-    }, [id])
+        
+    }, [id]);
 
     const getItems = () => {
         
