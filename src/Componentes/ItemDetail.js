@@ -1,17 +1,18 @@
 import ItemCount from "./ItemCount";
-import Item from './Item';
 import { useParams } from 'react-router-dom';
-import data from './data/data';
-
+import { useContext } from './context';
 
 const ItemDetail = ({item}) => {
 
-    function onAdd(contador) {
-        console.log("Agregaste " + contador + "productos");
+    function onAdd(counter) {
+        console.log("Agregaste " + counter + " productos");
+        //setTotalAmount(amount)
+        //addToCart(amount, item)
    }
 
     const {id} = useParams ();
     console.log (id)
+
     return (
         <div>
             <h1>Detalle de producto</h1>

@@ -2,27 +2,34 @@ import { useState } from 'react';
 
 function ItemCount ({stock, initial, onAdd}) {
     
-  const [contador, setContador] = useState (initial);
+  const [counter, setCounter] = useState (initial);
+
 
     const sumar = () => {
-        if (contador < stock){
-          setContador(contador + 1);
+        if (counter < stock){
+          setCounter(counter + 1);
         }
       }
 
       const restar = () => {
-        if (contador > initial) {
-          setContador(contador - 1);
+        if (counter > initial) {
+          setCounter(counter - 1);
         }
+      }
+
+      const addItem = () => {
+        console.log ("Agregar items")
+        setCounter(initial)
+        onAdd (counter);
       }
      
     return (
 
-        <div className="contador">
+        <div className="counter">
           
-          <p> Productos: {contador}</p>
+          <p> Productos: {counter}</p>
           <button onClick={restar}>-</button>
-          <button onClick={() => onAdd(contador)}>Agregar</button>
+          <button onClick={() => onAdd(counter)}>Agregar</button>
           <button onClick={sumar}>+</button>
           
         </div>

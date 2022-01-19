@@ -24,7 +24,6 @@ function ItemDetailContainer({}) {
             setTimeout(() => {
                 setLoading (false);
                 let idProd = productos.filter((item) => item.id == id)
-                console.log(idProd)
                 res (idProd[0])
             }, 4000);    
         })

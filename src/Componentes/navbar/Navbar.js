@@ -2,6 +2,7 @@ import React from "react";
 import "./navbar.scss";
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget.js";
+import { useContexto } from '../context';
 
 function Navbar ({nombre, links}) {
 
@@ -22,6 +23,10 @@ function Navbar ({nombre, links}) {
                     <span className="material-icons">
                         shopping_cart
                     </span>
+                    <span className="cartCount">
+                        {/*total_amount*/}
+                    </span>
+                     {/*total_amount*/}
                 </NavLink>
             </nav>
         
