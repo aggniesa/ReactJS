@@ -28,9 +28,9 @@ function App () {
           <Routes>
             <Route path="/" element={<ItemListContainer greeting={"Bienvenidx"} nombreUsuario={"Inés"} apellido={"Mena"}/>}/>
             <Route path="/products" element={<ItemListContainer greeting={"Bienvenidx"} nombreUsuario={"Inés"} apellido={"Mena"}/>}/>
-            <Route path="/cart" element={<Cart/>}/>
             <Route path="/category/:id" element={<ItemListContainer greeting={"Bienvenidx"} nombreUsuario={"Inés"} apellido={"Mena"}/>}/>
             <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/cart" element={<Cart/>}/>
           </Routes>
           </main>
         <Footer/>

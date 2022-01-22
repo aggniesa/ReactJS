@@ -3,8 +3,8 @@ import { useContexto } from '../context';
 
 const CartWidget = () => {
 
-    const {total_amount} = useContexto();
-    console.log(total_amount)
+    const {total_quantity} = useContexto();
+    console.log(total_quantity)
 
     return (
         <div className= "cart-widget">

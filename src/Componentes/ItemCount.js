@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function ItemCount ({stock, initial, onAdd}) {
     
-  const [counter, setCounter] = useState (initial);
+  let [counter, setCounter] = useState (initial);
 
 
     const sumar = () => {

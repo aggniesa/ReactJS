@@ -1,8 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import data from './data/data';
-import {Item} from './Item'
 
-const context = createContext ({total_amount: 0 , cart: [data]});
+const context = createContext ({total_quantity: 0 , cart: [data]});
 
 export const { Provider } = context
 
@@ -12,35 +11,52 @@ export const useContexto = () => {
 
 const CustomProvider = ({children}) => {
 
-    const [total_amount, setTotalAmount] = useState({});
+    const [total_quantity, setTotalQuantity] = useState(0);
     const [cart, setCart] = useState([]);
 
-    const addToCart = (item, amount) => {
-        if(isInCart()){
-            let productInCart = cart.find(p => p.id === item.id)
-            productInCart.amount += amount
-            setTotalAmount(total_amount + amount)
-            setCart([...cart])
+    const addToCart = (item, quantity) => {
+        const id = item.id
+
+        const copy_item = {...item}
+        copy_item.quantity = quantity
+
+        setCart([...cart,copy_item])
+        if(isInCart(id)){
+            const cart_copy = {...cart}
+            let match = cart_copy.find((p) => p.id === item.id)
+            match.quantity = match.quantity + quantity
+            setCart(cart_copy)
 
         }else {
-            setCart([...cart, {
-                item,
-                amount
-            }])
+            const item_quantity = {
+                ...item,
+                quantity
+            }
+            setCart([...cart, item_quantity])
         }
+        
+        setTotalQuantity(total_quantity + quantity)
     }
-    const removeFromCart = (id) => {}
-    const clearCart = () => { setCart([]) }
+    const removeItem = (id,quantity) => {
+        let filteredCart = cart.filter(e => (e.id) !== id)
+        setCart(filteredCart)
+        setTotalQuantity(total_quantity - quantity)
+
+    }
+
+    const clearCart = () => { 
+        setCart([])
+        setTotalQuantity(0)
+    }
     const isInCart = (id) => {
-        return cart.find((Item) = Item.id === id)
-        //return true ? false
+        return 
     }
 
     const contextValue = {
-        total_amount,
+        total_quantity,
         cart,
         addToCart,
-        removeFromCart,
+        removeItem,
         clearCart
     }
 

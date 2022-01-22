@@ -3,15 +3,17 @@ import Item from './Item';
 
 const Cart = ({lista}) => {
 
-    const {cart, removeFromCart, clearCart} = useContexto()
+
+    const {cart, removeItem, clearCart} = useContexto()
     console.log(cart)
 
     return (
         <div className="cardContainer">
-            {cart.length > 0}
-            {lista.map((products)=> {
-                return <Item key={products.id} item={products}/>
-            })}
+            Cart
+            {/*cart.length > 0 ? ()}
+            {l/*ista.map((products)=> {
+                return <Item key={/*products.id} item={products}/>
+            })*/}
         </div>
     )
 }
