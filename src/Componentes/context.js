@@ -1,20 +1,21 @@
 import { createContext, useContext, useState } from 'react';
 import data from './data/data';
 
-const context = createContext ({total_quantity: 0 , cart: [data]});
+export const cartContext = createContext ({total_quantity: 0 , cart: [data]});
 
-export const { Provider } = context
+export const { Provider } = cartContext
 
 export const useContexto = () => {
-    return useContext(context)
+    return useContext(cartContext)
 }
 
-const CustomProvider = ({children}) => {
+export const CustomProvider = ({children}) => {
 
     const [total_quantity, setTotalQuantity] = useState(0);
     const [cart, setCart] = useState([]);
 
-    const addToCart = (item, quantity) => {
+    /*add item to cart*/
+    const addItem = (item, quantity) => {
         const id = item.id
 
         const copy_item = {...item}
@@ -37,6 +38,8 @@ const CustomProvider = ({children}) => {
         
         setTotalQuantity(total_quantity + quantity)
     }
+
+    /*remove item from cart*/ 
     const removeItem = (id,quantity) => {
         let filteredCart = cart.filter(e => (e.id) !== id)
         setCart(filteredCart)
@@ -44,18 +47,21 @@ const CustomProvider = ({children}) => {
 
     }
 
+    /* clear cart*/
     const clearCart = () => { 
         setCart([])
         setTotalQuantity(0)
     }
+    /* is in cart*/
     const isInCart = (id) => {
-        return 
+        return cart.find(e => e.item.id === id)
     }
+
 
     const contextValue = {
         total_quantity,
         cart,
-        addToCart,
+        addItem,
         removeItem,
         clearCart
     }

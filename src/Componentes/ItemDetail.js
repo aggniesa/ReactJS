@@ -4,13 +4,13 @@ import { useContexto } from './context';
 
 const ItemDetail = ({item}) => {
 
-    const { addToCart } = useContexto()
+    const { addItem } = useContexto()
 
 
     function onAdd(quantity) {
         console.log("Agregaste " + quantity + " productos");
         //setTotalQuantity(quantity)
-        addToCart(item, quantity)
+        addItem(item, quantity)
    }
 
     const {id} = useParams ();
